@@ -25,33 +25,23 @@ const Formulario = ({crearCita}) => {
       [e.target.name]: e.target.value
     })
   }
-
   //agregarCita
-
   const submitCita = (e) => {
     e.preventDefault();
-
-
     //validar
-
     if (nombreMascota.trim() === "" || nombreDueño.trim() === "" ||
       fechaAlta.trim() === "" || horaAlta.trim() === "" || descripcion.trim() === "") {
       actualizarError(true)
       console.log("hay un error");
       return;
     }
-
     //eliminar mensaje de error
     actualizarError(false)
-
     //asignar id
-
     cita.id = uuid();
     //crear cita
     crearCita(cita)
     //reinicar form
-
-
     actualizarCita({
       nombreMascota: '',
       nombreDueño: '',
